@@ -1,0 +1,44 @@
+@media (min-width: 768px){
+
+        .container {
+            flex-direction: row;
+            width: 100%;
+        }
+    
+        .container-left {
+            width: 50%;
+        }
+    
+        .container-right {
+            width: 50%;
+        }
+    
+        .container-left {
+            height: 650px; 
+        }
+        
+        .container-right {
+            height: 650px;
+        }
+    
+        .container-list-left {
+            height: 70%;
+        }
+        
+        .container-list-right {
+            height: 70%;
+        }
+    
+        .container-financial-left{
+            justify-content: left;
+        }
+    
+        .container-financial-right{
+            justify-content: left;
+        }
+    
+        .container-input-error{
+            text-align: left;
+        }
+    }
+

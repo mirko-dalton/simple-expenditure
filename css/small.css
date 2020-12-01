@@ -1,0 +1,177 @@
+    .up {
+        font-size: 24px;
+        font-weight: bold; 
+    }
+    
+    .down {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    
+    .title{
+        width: 100%;
+        background: rgb(144, 163, 199);
+        text-align: center;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container-up{
+        width: 100%;
+        background-color: rgb(213, 227, 213);
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .container-left {
+        height: 50%;
+        width: 100%;
+        background:rgb(222, 220, 220);
+        padding: 20px;
+    }
+    
+    .container-right {
+        height: 50%;
+        width: 100%;
+        background: rgb(213, 208, 208);
+        padding: 20px;
+    }
+    
+    .container-financial-left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .container-financial-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    
+    .container-list-left {
+        height: auto;
+        margin-top: 20px;
+        background-image:  url(../pic/income.jpg) ;
+        background-position: center;
+        background-size: cover;
+        overflow: auto;
+    }
+    
+    .container-list-right {
+        height: auto;
+        margin-top: 20px;
+        background: white;
+        background-image:  url(../pic/expenses.jpg);
+        background-position: center;
+        background-size: cover;
+        overflow: auto;
+    }
+    
+    .container-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    
+    .container-edit-input{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        margin-bottom: 2px;
+        margin-top: 2px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    
+    .list-content-container{
+        flex: 1;
+        font-weight: bold;
+        margin-left: 20px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    
+    .income-edit-btn{
+        margin-right: 20px;
+        margin-top: 1px;
+    }
+    
+    .income-delete-btn{
+        margin-right: 20px;
+        margin-top: 1px; 
+    }
+    
+    .expenses-edit-btn{
+        margin-right: 20px;
+        margin-top: 1px;
+    }
+    
+    .expenses-delete-btn{
+        margin-right: 20px;
+        margin-top: 1px; 
+    }
+    
+    .edit-input-one{
+        margin-left: 20px;
+        margin-top: 1px; 
+    }
+    
+    .edit-input-two{
+        margin-left: 20px;
+        margin-top: 1px; 
+    }
+    
+    .on-save-button-clicked{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 1px; 
+    }
+    
+    .container-input-error{
+        height: 10px;
+        text-align: center;
+    }
+    
+    .input-error-left{
+        font-size: 15px;
+        color: red;
+        margin-top: 2px;
+    }
+        
+    .input-error-right{
+        font-size: 15px;
+        color:red;
+        margin-top: 2px;   
+    }
+    
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+        background-color: rgb(166, 177, 210);
+    }
