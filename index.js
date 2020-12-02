@@ -3,32 +3,6 @@
 let tabFinanzialIncome = [];
 let tabFinanzialExpenses = [];
 
-// Right
-let containerAddFinancialExpenses = document.querySelector(".container-financial-right"); 
-let inputAddFinancialExpenses = document.createElement('input');
-let inputAddFinancialExpensesAmount = document.createElement('input');
-let buttonAddFinancialExpenses = document.createElement('button');
-
-buttonAddFinancialExpenses.setAttribute('id','button-add-financial-change-expenses');
-buttonAddFinancialExpenses.innerText="Dodaj";
-buttonAddFinancialExpenses.style.marginLeft = "20px";
-buttonAddFinancialExpenses.setAttribute('type','submit');
-
-inputAddFinancialExpenses.setAttribute('id','input-financial-change-expenses');
-inputAddFinancialExpenses.placeholder = "Nazwa wydatku";
-inputAddFinancialExpenses.setAttribute('type','text');
-inputAddFinancialExpenses.setAttribute('class','input-financial-change-expenses');
-
-inputAddFinancialExpensesAmount.setAttribute('id','input-financial-change-amount-expenses');
-inputAddFinancialExpensesAmount.setAttribute('type','number');
-inputAddFinancialExpensesAmount.setAttribute('step','0.01');
-inputAddFinancialExpensesAmount.placeholder="Kwota";
-inputAddFinancialExpensesAmount.style.marginLeft = "20px";
-
-containerAddFinancialExpenses.appendChild(inputAddFinancialExpenses);
-containerAddFinancialExpenses.appendChild(inputAddFinancialExpensesAmount);
-containerAddFinancialExpenses.appendChild(buttonAddFinancialExpenses);
-
 //Left
 let containerAddFinancialIncome = document.querySelector(".container-financial-left"); 
 let inputAddFinancialIncome = document.createElement('input');
@@ -55,12 +29,35 @@ containerAddFinancialIncome.appendChild(inputAddFinancialIncome);
 containerAddFinancialIncome.appendChild(inputAddFinancialIncomeAmount);
 containerAddFinancialIncome.appendChild(buttonAddFinancialIncome);
 
+// Right
+let containerAddFinancialExpenses = document.querySelector(".container-financial-right"); 
+let inputAddFinancialExpenses = document.createElement('input');
+let inputAddFinancialExpensesAmount = document.createElement('input');
+let buttonAddFinancialExpenses = document.createElement('button');
+
+buttonAddFinancialExpenses.setAttribute('id','button-add-financial-change-expenses');
+buttonAddFinancialExpenses.innerText="Dodaj";
+buttonAddFinancialExpenses.style.marginLeft = "20px";
+buttonAddFinancialExpenses.setAttribute('type','submit');
+
+inputAddFinancialExpenses.setAttribute('id','input-financial-change-expenses');
+inputAddFinancialExpenses.placeholder = "Nazwa wydatku";
+inputAddFinancialExpenses.setAttribute('type','text');
+inputAddFinancialExpenses.setAttribute('class','input-financial-change-expenses');
+
+inputAddFinancialExpensesAmount.setAttribute('id','input-financial-change-amount-expenses');
+inputAddFinancialExpensesAmount.setAttribute('type','number');
+inputAddFinancialExpensesAmount.setAttribute('step','0.01');
+inputAddFinancialExpensesAmount.placeholder="Kwota";
+inputAddFinancialExpensesAmount.style.marginLeft = "20px";
+
+containerAddFinancialExpenses.appendChild(inputAddFinancialExpenses);
+containerAddFinancialExpenses.appendChild(inputAddFinancialExpensesAmount);
+containerAddFinancialExpenses.appendChild(buttonAddFinancialExpenses);
+
 let totalIncomeSpan = document.querySelector('.total-income');
-
 let totalExpensesSpan = document.querySelector('.total-expenses');
-
 let showLeftToEpencesSumme = document.querySelector('.show-rest-pln');
-
 let showInfoLefttoExpensesSumme = document.querySelector('.show-left-to-expenses-summe');
 
 addLeftToRelasedSumme();
@@ -69,7 +66,7 @@ addLeftToRelasedSumme();
     let amouNt = 0;
     let incId = 0.00;
     let containerListLeft = document.querySelector('.container-list-left');
-    //document.addEventListener('DOMContentLoaded',() =>{
+    
     let formOne = document.getElementById('form-income');
     
     formOne.addEventListener('submit', function(event) {
@@ -79,7 +76,6 @@ addLeftToRelasedSumme();
         let incomeInpAmount = event.target.elements[1];
 
         let inputError = document.getElementById('input-error-left');
-        console.log(incomeInp.value, incomeInpAmount.value);///////////
 
         if (incomeInp.value.length < 1 || incomeInpAmount.value.length < 1){
         inputError.innerText = "wypelnij pola (min. po jednym znaku)"
@@ -95,7 +91,6 @@ addLeftToRelasedSumme();
                     }else{
                     if (incomeInp.value.length > 0 && incomeInpAmount.value.length > 0){
                     inputError.innerText = " ";
-                    console.log('length:', incomeInp.value.length)//////////////
         
                     let finIncTable = {
                     id: incId,
@@ -106,7 +101,6 @@ addLeftToRelasedSumme();
                     incId++;
                     tabFinanzialIncome.push(finIncTable);
 
-                    console.log(tabFinanzialIncome);//console.log
                     updateFinanzialIncome();
                     }
                 }
@@ -135,7 +129,7 @@ addLeftToRelasedSumme();
         return
             }else{
             if (expensesInpAmount.value.length > 12){
-            inputError.innerText = "za duza kwota (max: 999999999,99))";
+            inputError.innerText = "za duza kwota (max: 999999999,99)";
             return 
                 }else{
                 if (expensesInp.value.length > 30){
@@ -148,13 +142,12 @@ addLeftToRelasedSumme();
                     let finExpTable = {
                     id: expId,
                     expencEs: expensesInp.value,
-                    expAm: +expensesInpAmount.value, //parseFloat
+                    expAm: +expensesInpAmount.value, 
                     };
 
                     expId++;
                     tabFinanzialExpenses.push(finExpTable);
 
-                    console.log(tabFinanzialExpenses);//console.log
                     updateFinanzialExpenses(); 
                     }
                 }
@@ -164,9 +157,8 @@ addLeftToRelasedSumme();
 
     function updateFinanzialIncome(){
 
-    console.log(tabFinanzialIncome);/////////////
-    //showLeftToEpencesSumme.innerText = '0 PLN';    
     containerListLeft.innerText='';
+
     resetInputValue();
             
         for (let update of Object(tabFinanzialIncome)){
@@ -186,8 +178,6 @@ addLeftToRelasedSumme();
         incomeEditBtn.innerText = "Edytuj"; 
         incomeEditBtn.id = update.id;
 
-        console.log('id editbutton: ', incomeEditBtn.id);//////////
-
         incomeEditBtn.addEventListener('click', function(){ 
         incomeContainer.setAttribute('class', 'container-edit-input');
         incomeContainer.innerHTML = `
@@ -206,7 +196,8 @@ addLeftToRelasedSumme();
         incomeDeleteBtn.addEventListener('click', function(event){ 
             tabFinanzialIncome = tabFinanzialIncome.filter(function(element){ 
                 return element.id !== Number(event.target.id);
-            });    
+            }); 
+
             updateFinanzialIncome();
             addLeftToRelasedSumme();   
         });
@@ -215,6 +206,7 @@ addLeftToRelasedSumme();
         incomeContainer.appendChild(incomeEditBtn);
         incomeContainer.appendChild(incomeDeleteBtn);
         containerListLeft.appendChild(incomeContainer);
+
         addIncomeSumme();
         addLeftToRelasedSumme();
         }   
@@ -223,16 +215,13 @@ addLeftToRelasedSumme();
     function updateFinanzialExpenses(){
 
         const showSummeIncome = addIncomeSumme();
-
-        //totalIncomeSpan.innerText = '0 PLN'; 
-        //totalExpensesSpan.innerText = '0 PLN'; 
+ 
         showLeftToEpencesSumme.innerText = showSummeIncome.toFixed(2) + " " + "PLN";        
         containerListRight.innerText ='';
         resetInputValue();
-            
+
         for (let update of Object(tabFinanzialExpenses)){
         
-        //tabFinanzialExpenses.forEach(function(update){
         let expensesContainer = document.createElement('div');
         expensesContainer.setAttribute('id', 'expenses-container');
         expensesContainer.setAttribute('class', 'container-content');
@@ -255,8 +244,6 @@ addLeftToRelasedSumme();
         <input class ="edit-input-expenses-two" id="editedInputExpensesTwo-${update.id}" value="${update.expAm}" type ="number"step="0.01"></input>
         <button class ="on-save-button-expenses-clicked" onclick="onSaveExpensesButtonClicked(${update.id})">Zapisz</button>
         `;  
-
-        console.log(`editedInputExpensesOne`)
         }); 
 
         let expensesDeleteBtn = document.createElement('button');
@@ -268,7 +255,8 @@ addLeftToRelasedSumme();
         expensesDeleteBtn.addEventListener('click', function(event){ 
             tabFinanzialExpenses = tabFinanzialExpenses.filter(function(element){ 
                 return element.id !== Number(event.target.id);
-            });    
+            }); 
+
             updateFinanzialExpenses();
             addLeftToRelasedSumme();
             
@@ -278,6 +266,7 @@ addLeftToRelasedSumme();
         expensesContainer.appendChild(expensesEditBtn);
         expensesContainer.appendChild(expensesDeleteBtn);
         containerListRight.appendChild(expensesContainer);
+
         addExpensesSumme();
         addLeftToRelasedSumme();
         }
@@ -285,23 +274,23 @@ addLeftToRelasedSumme();
 
     function onSaveIncomeButtonClicked(id) {
 
-        console.log('id2:', id)//////
         const element = tabFinanzialIncome.find(elem => elem.id === id);
         const elemOne = document.getElementById(`editedInputOne-${id}`);
         const elemTwo = document.getElementById(`editedInputTwo-${id}`);
         element.incoMe = elemOne.value;
         element.amouNt = +elemTwo.value;
+
         updateFinanzialIncome();
     }
 
     function onSaveExpensesButtonClicked(id) {
 
-        console.log('id3:', id)/////
         const element = tabFinanzialExpenses.find(elem => elem.id === id);
         const elemOne = document.getElementById(`editedInputExpensesOne-${id}`);
         const elemTwo = document.getElementById(`editedInputExpensesTwo-${id}`);
         element.expencEs = elemOne.value;
         element.expAm = +elemTwo.value;
+
         updateFinanzialExpenses();
     }
     
@@ -336,7 +325,6 @@ addLeftToRelasedSumme();
         let summeOne = showSummeIncome;
         let summeTwo = showSummeExpenses;
         let leftRelSumme = summeOne - summeTwo;
-        console.log(summeOne, summeTwo, leftRelSumme);
         if (summeOne === summeTwo ){
             showInfoLefttoExpensesSumme.innerText="Bilans wynosi zero";
             showLeftToEpencesSumme.innerText = '';
