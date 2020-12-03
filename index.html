@@ -22,12 +22,18 @@
         <div class="container-left">
             <form id="form-income">
                 <p class="up">PRZYCHODY</p>
-                <div class="container-financial-left"></div>
+                <div class="container-financial-left">
+                    <input class="input-financial-change-income" type="text" placeholder="Nazwa przychodu"> 
+                    <input class="input-financial-change-income-amount" type="number" min="0" step="0.01" placeholder="Kwota">
+                    <button class="button-add-financial-change-income" type="submit">DODAJ</button>
+                </div>
             </form>
                 <div class="container-input-error">      
                 <p id = "input-error-left" class = "input-error-left"></p>
                 </div>
-                <div class="container-list-left"></div>
+                <div class="container-list-left">
+                    
+                </div>
                 <p class="down">SUMA PRZYCHODOW:
                     <span class="total-income"></span>
                 </p>
@@ -35,7 +41,11 @@
         <div class="container-right">
             <form id="form-expenses">
                 <p class="up">WYDATKI</p>
-                <div class="container-financial-right"></div>
+                <div class="container-financial-right">
+                    <input class="input-financial-change-expenses" type="text" placeholder="Nazwa przychodu"> 
+                    <input class="input-financial-change-expenses-amount" type="number" min="0" step="0.01" placeholder="Kwota">
+                    <button class="button-add-financial-change-expenses" type="submit">DODAJ</button>
+                </div>
             </form>
                 <div class="container-input-error">
                 <p id = "input-error-right" class = "input-error-right"></p>
