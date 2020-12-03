@@ -66,7 +66,6 @@ formOne.addEventListener('submit', function (event) {
 let expId = 0;
 let expencEs = '';
 let expAm = 0.00;
-
 let containerListRight = document.querySelector('.container-list-right');
 
 let formTwo = document.getElementById('form-expenses');
@@ -123,6 +122,7 @@ function updateFinanzialIncome() {
         incomeLi.innerText = update.incoMe + " - " + (update.amouNt).toFixed(2) + " PLN";
 
         let incomeEditBtn = document.createElement('button');
+        incomeEditBtn.setAttribute('class', 'income-edit-btn');
         incomeEditBtn.innerText = "Edytuj";
 
         incomeEditBtn.addEventListener('click', function () {
@@ -213,7 +213,7 @@ function updateFinanzialExpenses() {
 }
 
 function onSaveIncomeButtonClicked(id) {
-    
+
     let editedInputTwo = document.querySelector('.edit-input-income-two').value
 
     if (editedInputTwo < 0) {
